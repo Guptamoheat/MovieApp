@@ -39,13 +39,16 @@ export default function Reviews({getMovieData, movie, reviews, setReviews}) {
 
             <div className="right">
                 <ReviewForm handelSubmit={addReview} revText={revText} labelText={'Write a review'}></ReviewForm>
-                <hr/>
+                
                 
                 {reviews &&
                     
                     reviews.map(r => {
                         return (
-                            <p >{r.body}</p>
+                            <div>
+                                <p key={r.body}>{r.body}</p>
+                                <hr/>
+                            </div>
                         )
                     })}
                 
